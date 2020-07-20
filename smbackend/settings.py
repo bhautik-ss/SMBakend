@@ -44,11 +44,10 @@ INSTALLED_APPS = [
     'knox',
 ]
 
-REST_FRAMEWORK = {
+REST_FRAMWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ]
+        'knox.auth.TokenAuthentication',
+    ],
 }
 
 MIDDLEWARE = [
@@ -143,3 +142,5 @@ else:
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/media/')
+
+AUTH_USER_MODEL ='employee.employeeProfile'
